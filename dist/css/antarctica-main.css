@@ -1,0 +1,22 @@
+body {
+  margin: 0;
+  padding: 0; }
+
+.al-wrapper {
+  background: #323232;
+  color: #f0f0f0;
+  width: 480px; }
+
+.al-map {
+  min-height: 250px; }
+
+.al-metrics {
+  width: 100%;
+  border-collapse: collapse; }
+  .al-metrics td {
+    border: 1px solid #5a5a5a;
+    padding: 10px 12px; }
+  .al-metrics .al-metric-title, .al-metrics .al-metric-value {
+    margin: 0; }
+  .al-metrics .al-metric-value {
+    font-size: 12px; }
