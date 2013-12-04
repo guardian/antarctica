@@ -4,26 +4,225 @@ body {
 
 .al-wrapper {
   color: #585858;
-  width: 480px;
-  background-color: #f4f4ed;
+  background-color: #f4f4ee;
   font-family: arial, sans-serif;
-  border-top: 3px solid #22c6e1; }
+  border-top: 3px solid #4bc6df;
+  -webkit-font-smoothing: antialiased; }
+
+@font-face {
+  font-family: 'Guardian Agate Sans';
+  src: url('fonts/Guardian Ag Sans 1 Web-Reg.eot');
+  src: url('fonts/Guardian Ag Sans 1 Web-Reg.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Ag Sans 1 Web-Reg.woff') format('woff'), url('fonts/Guardian Ag Sans 1 Web-Reg.ttf') format('truetype'), url('fonts/Guardian Ag Sans 1 Web-Reg.svg#Guardian Text Egyp Web-Reg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: 'Guardian Agate Sans';
+  src: url('fonts/Guardian Ag Sans 1 Web-Reg-It.eot');
+  src: url('fonts/Guardian Ag Sans 1 Web-Reg-It.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Ag Sans 1 Web-Reg-It.woff') format('woff'), url('fonts/Guardian Ag Sans 1 Web-Reg-It.ttf') format('truetype'), url('fonts/Guardian Ag Sans 1 Web-Reg-It.svg#Guardian Text Egyp Web-Reg-It') format('svg');
+  font-weight: normal;
+  font-style: italic;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: 'Guardian Agate Sans';
+  src: url('fonts/Guardian Ag Sans 1 Web-Bold.eot');
+  src: url('fonts/Guardian Ag Sans 1 Web-Bold.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Ag Sans 1 Web-Bold.woff') format('woff'), url('fonts/Guardian Ag Sans 1 Web-Bold.ttf') format('truetype'), url('fonts/Guardian Ag Sans 1 Web-Bold.svg#Guardian Text Egyp Web-Medium') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: 'Guardian Agate Sans';
+  src: url('fonts/Guardian Ag Sans 1 Web-Bold-It.eot');
+  src: url('fonts/Guardian Ag Sans 1 Web-Bold-It.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Ag Sans 1 Web-Bold-It.woff') format('woff'), url('fonts/Guardian Ag Sans 1 Web-Bold-It.ttf') format('truetype'), url('fonts/Guardian Ag Sans 1 Web-Bold-It.svg#Guardian Text Egyp Web-Med-It') format('svg');
+  font-weight: bold;
+  font-style: italic;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: 'Guardian Compact';
+  src: url('fonts/Guardian Compact Web-Black.eot');
+  src: url('fonts/Guardian Compact Web-Black.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Compact Web-Black.woff') format('woff'), url('fonts/Guardian Compact Web-Black.ttf') format('truetype'), url('fonts/Guardian Compact Web-Black.svg#Guardian Compact Web-Black') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: "Guardian Egyptian Headline";
+  src: url('fonts/Guardian Egyp Web-Light.eot');
+  src: url('fonts/Guardian Egyp Web-Light.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Egyp Web-Light.woff') format('woff'), url('fonts/Guardian Egyp Web-Light.ttf') format('truetype'), url('fonts/Guardian Egyp Web-Light.svg#Guardian Egyp Web-Light') format('svg');
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: "Guardian Egyptian Headline";
+  src: url('fonts/Guardian Egyp Web-Regular.eot');
+  src: url('fonts/Guardian Egyp Web-Regular.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Egyp Web-Regular.woff') format('woff'), url('fonts/Guardian Egyp Web-Regular.ttf') format('truetype'), url('fonts/Guardian Egyp Web-Regular.svg#Guardian Egyp Web-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: "Guardian Egyptian Headline";
+  src: url('fonts/Guardian Egyp Web-Regular-It.eot');
+  src: url('fonts/Guardian Egyp Web-Regular-It.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Egyp Web-Regular-It.woff') format('woff'), url('fonts/Guardian Egyp Web-Regular-It.ttf') format('truetype'), url('fonts/Guardian Egyp Web-Regular-It.svg#Guardian Egyp Web-Regular-It') format('svg');
+  font-weight: normal;
+  font-style: italic;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: "Guardian Egyptian Headline";
+  src: url('fonts/Guardian Egyp Web-Medium.eot');
+  src: url('fonts/Guardian Egyp Web-Medium.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Egyp Web-Medium.woff') format('woff'), url('fonts/Guardian Egyp Web-Medium.ttf') format('truetype'), url('fonts/Guardian Egyp Web-Medium.svg#Guardian Egyp Web-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: "Guardian Egyptian Headline";
+  src: url('fonts/Guardian Egyp Web-Semibold.eot');
+  src: url('fonts/Guardian Egyp Web-Semibold.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Egyp Web-Semibold.woff') format('woff'), url('fonts/Guardian Egyp Web-Semibold.ttf') format('truetype'), url('fonts/Guardian Egyp Web-Semibold.svg#Guardian Egyp Web-Semibold') format('svg');
+  font-weight: 600;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: "Guardian Egyptian Headline";
+  src: url('fonts/Guardian Egyp Web-Semibold-It.eot');
+  src: url('fonts/Guardian Egyp Web-Semibold-It.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Egyp Web-Semibold-It.woff') format('woff'), url('fonts/Guardian Egyp Web-Semibold-It.ttf') format('truetype'), url('fonts/Guardian Egyp Web-Semibold-It.svg#Guardian Egyp Web-Semibold-It') format('svg');
+  font-weight: 600;
+  font-style: italic;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: "Guardian Egyptian Headline";
+  src: url('fonts/Guardian Egyp Web-Bold.eot');
+  src: url('fonts/Guardian Egyp Web-Bold.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Egyp Web-Bold.woff') format('woff'), url('fonts/Guardian Egyp Web-Bold.ttf') format('truetype'), url('fonts/Guardian Egyp Web-Bold.svg#Guardian Egyp Web-Bold') format('svg');
+  font-weight: bold;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: "Guardian Egyptian Headline";
+  src: url('fonts/Guardian Egyp Web-Bold-It.eot');
+  src: url('fonts/Guardian Egyp Web-Bold-It.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Egyp Web-Bold-It.woff') format('woff'), url('fonts/Guardian Egyp Web-Bold-It.ttf') format('truetype'), url('fonts/Guardian Egyp Web-Bold-It.svg#Guardian Egyp Web-Bold-It') format('svg');
+  font-weight: bold;
+  font-style: italic;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: "Guardian Egyptian Text";
+  src: url('fonts/Guardian Text Egyp Web-Reg.eot');
+  src: url('fonts/Guardian Text Egyp Web-Reg.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Text Egyp Web-Reg.woff') format('woff'), url('fonts/Guardian Text Egyp Web-Reg.ttf') format('truetype'), url('fonts/Guardian Text Egyp Web-Reg.svg#Guardian Text Egyp Web-Reg') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: "Guardian Egyptian Text";
+  src: url('fonts/Guardian Text Egyp Web-Reg-It.eot');
+  src: url('fonts/Guardian Text Egyp Web-Reg-It.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Text Egyp Web-Reg-It.woff') format('woff'), url('fonts/Guardian Text Egyp Web-Reg-It.ttf') format('truetype'), url('fonts/Guardian Text Egyp Web-Reg-It.svg#Guardian Text Egyp Web-Reg-It') format('svg');
+  font-weight: normal;
+  font-style: italic;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: "Guardian Egyptian Text";
+  src: url('fonts/Guardian Text Egyp Web-Med.eot');
+  src: url('fonts/Guardian Text Egyp Web-Med.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Text Egyp Web-Med.woff') format('woff'), url('fonts/Guardian Text Egyp Web-Med.ttf') format('truetype'), url('fonts/Guardian Text Egyp Web-Med.svg#Guardian Text Egyp Web-Medium') format('svg');
+  font-weight: 500;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: "Guardian Egyptian Text";
+  src: url('fonts/Guardian Text Egyp Web-Med-It.eot');
+  src: url('fonts/Guardian Text Egyp Web-Med-It.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Text Egyp Web-Med-It.woff') format('woff'), url('fonts/Guardian Text Egyp Web-Med-It.ttf') format('truetype'), url('fonts/Guardian Text Egyp Web-Med-It.svg#Guardian Text Egyp Web-Med-It') format('svg');
+  font-weight: 500;
+  font-style: italic;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: "Guardian Sans Headline";
+  src: url('fonts/Guardian Sans Web-Light.eot');
+  src: url('fonts/Guardian Sans Web-Light.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Sans Web-Light.woff') format('woff'), url('fonts/Guardian Sans Web-Light.ttf') format('truetype'), url('fonts/Guardian Sans Web-Light.svg#Guardian Sans Web-Light') format('svg');
+  font-weight: 200;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: "Guardian Sans Headline";
+  src: url('fonts/Guardian Sans Web-Regular.eot');
+  src: url('fonts/Guardian Sans Web-Regular.eot?#iefix') format('embedded-opentype'), url('fonts/Guardian Sans Web-Regular.woff') format('woff'), url('fonts/Guardian Sans Web-Regular.ttf') format('truetype'), url('fonts/Guardian Sans Web-Regular.svg#Guardian Sans Web-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: "Guardian Titlepiece";
+  src: url('fonts/GuardianTitlepieceWeb-Regular.eot');
+  src: url('fonts/GuardianTitlepieceWeb-Regular.eot?#iefix') format('embedded-opentype'), url('fonts/GuardianTitlepieceWeb-Regular.woff') format('woff'), url('fonts/GuardianTitlepieceWeb-Regular.ttf') format('truetype'), url('fonts/GuardianTitlepieceWeb-Regular.svg#GuardianTitlepieceWeb-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal; }
+
+@font-face {
+  font-family: "DW72 Weekend Cond";
+  src: url('fonts/DW72 Weekend Cond Web BL Head.eot');
+  src: url('fonts/DW72 Weekend Cond Web BL Head.eot?#iefix') format('embedded-opentype'), url('fonts/DW72 Weekend Cond Web BL Head.woff') format('woff'), url('fonts/DW72 Weekend Cond Web BL Head.ttf') format('truetype'), url('fonts/DW72 Weekend Cond Web BL Head.svg#GuardianTitlepieceWeb-Regular') format('svg');
+  font-weight: normal;
+  font-style: normal;
+  font-stretch: normal; }
 
 .al-map {
-  min-height: 250px; }
+  min-height: 220px;
+  background-color: #b3d1fd; }
   .al-map iframe {
     width: 100%; }
 
 .al-nav {
-  position: relative; }
+  position: relative;
+  padding: 10px 0 7px; }
+
+.al-nav-day-count {
+  margin: 0;
+  font-family: "Guardian Egyptian Headline", Georgia;
+  font-weight: bold;
+  color: #333333;
+  font-size: 16px; }
+
+.al-nav-date-value {
+  font-family: "Guardian Agate Sans", Arial;
+  margin: 1px 0 0 0;
+  font-size: 13px;
+  line-height: 16px;
+  color: #959595; }
 
 .al-nav-button {
   position: absolute;
   top: 10px;
-  border-radius: 30px;
-  background-color: #cac8b2;
-  width: 20px;
-  height: 20px; }
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  top: 10px;
+  bottom: 10px; }
+
+.al-nav-button-prev {
+  background: url(../imgs/arrowLeftEnabled.png); }
+
+.al-nav-button-prev.disabled {
+  background: url(../imgs/arrowLeftDisabled.png);
+  cursor: default; }
+
+.al-nav-button-next {
+  background: url(../imgs/arrowRightEnabled.png); }
+
+.al-nav-button-next.disabled {
+  background: url(../imgs/arrowRightDisabled.png);
+  cursor: default; }
 
 .al-nav-button-prev {
   left: 10px; }
@@ -36,14 +235,33 @@ body {
 
 .al-metrics {
   width: 100%;
-  border-collapse: collapse; }
-  .al-metrics tr {
-    border-top: 1px solid #dedede; }
-    .al-metrics tr :first-child {
-      border-top-width: 2px; }
+  border-collapse: collapse;
+  border: 0;
+  border-top: 2px solid #dedede; }
+  .al-metrics tr:first-child {
+    border-bottom: 1px solid #dedede; }
   .al-metrics td {
     border: none;
-    padding: 10px 12px; }
+    vertical-align: top;
+    padding: 25px 0;
+    width: 33%; }
+  .al-metrics .al-metric-item {
+    text-align: center;
+    font-family: "Guardian Egyptian Headline";
+    font-weight: 200;
+    margin: 0 0 10px;
+    line-height: 16px; }
+    .al-metrics .al-metric-item .al-metric-value {
+      font-size: 30px;
+      color: #585858;
+      line-height: 16px; }
+    .al-metrics .al-metric-item .al-metric-unit {
+      font-size: 18px; }
+  .al-metrics .al-metric-title {
+    font-family: "Guardian Agate Sans", Arial;
+    font-size: 14px;
+    text-align: center;
+    color: #959592; }
   .al-metrics .al-metric-title, .al-metrics .al-metric-value {
     margin: 0; }
   .al-metrics .al-metric-value {

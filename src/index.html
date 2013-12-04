@@ -12,14 +12,16 @@
 
 <script type="text/ractive" id="mainTemplate">
     <div class="al-nav">
-        <div class="al-nav-button al-nav-button-prev" on-tap="previousEntry">&lt;</div>
+
+        <div class="al-nav-button al-nav-button-prev" on-tap="previousEntry"></div>
 
         <div class="al-nav-dates" id="al-nav-dates">
             <p class="al-nav-day-count">Day (ENTRY ID!!!) {{ updatenumber }}</p>
             <p class="al-nav-date-value">{{ date }}</p>
         </div>
 
-        <div class="al-nav-button al-nav-button-next disabled" on-tap="nextEntry">&gt;</div>
+        <div class="al-nav-button al-nav-button-next disabled" on-tap="nextEntry"></div>
+
     </div>
     <div class="al-map">
         lat: {{ lat }} long: {{ long }}
@@ -35,8 +37,10 @@
                 </td>
                 <td class="air-temp">
                     <p class="al-metric-item">
-                        <span class="al-metric-value">{{ airtemp }}</span>
-                        <span class="al-metric-unit">o</span>
+
+                        <span class="al-metric-value">{{ airtemp }}°</span>
+                        <span class="al-metric-unit"></span>
+
                     </p>
                     <p class="al-metric-title">Air temperature</p>
                 </td>
