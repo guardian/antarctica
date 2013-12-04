@@ -3,6 +3,8 @@ var Antarctica = (function() {
     var ractive;
     var entries;
     var queryEntryID;
+    var shipMarker;
+    var map;
 
     function getParameterByName(name) {
         name = name.replace(/[\[]/, "\\[").replace(/[]]/, "\\]");
@@ -55,23 +57,27 @@ var Antarctica = (function() {
             {name: "Styled Map"}
         );
 
+        var centerLatLng = new google.maps.LatLng(-63.46, 166.34);
+
         var mapOptions = {
-            center: new google.maps.LatLng(-63.46, -166.34),
+            center: centerLatLng,
             disableDefaultUI: true,
             zoom: 2
         };
 
-        var map = new google.maps.Map($('.al-map').get()[0], mapOptions);
-        map.mapTypes.set('map_style', styledMap);
-        map.setMapTypeId('map_style');
+        gMap = new google.maps.Map($('.al-map').get()[0], mapOptions);
+        gMap.mapTypes.set('map_style', styledMap);
+        gMap.setMapTypeId('map_style');
 
-        var myLatlng = new google.maps.LatLng(-63.46, -166.34);
-        // To add the marker to the map, use the 'map' property
-        var marker = new google.maps.Marker({
-            position: myLatlng,
-            map: map,
-            title:"Hello World!"
+        shipMarker = new google.maps.Marker({
+            position: centerLatLng,
+            map: gMap,
+            title: ""
         });
+
+        google.maps.event.addDomListener(window, 'resize', _.debounce(function() {
+            gMap.setCenter(centerLatLng);
+        }, 200));
     }
 
     function nextEntry() {
@@ -88,9 +94,16 @@ var Antarctica = (function() {
         }
     }
 
+    function updateShipPosition() {
+        var data = entries[currentUpdateIndex];
+        var shipLatlng = new google.maps.LatLng(data.lat, data.long);
+        shipMarker.setPosition(shipLatlng);
+    }
+
 
     function showUpdate() {
         ractive.set(entries[currentUpdateIndex]);
+        updateShipPosition();
     }
 
     function init() {
