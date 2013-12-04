@@ -3,18 +3,46 @@
 .al-metrics {
     width: 100%;
     border-collapse: collapse;
+    border: 0;
+    border-top: 2px solid #DEDEDE;
 
     tr {
-        border-top: 1px solid $dividerColour;
-        :first-child {
-            border-top-width: 2px;
+        
+        &:first-child {
+            border-bottom:1px solid $dividerColour;
         }
     }
 
     td {
         border: none;
-        padding: 10px 12px;
+        vertical-align:top;
+        padding:25px 0;
+        width:33%;
     }
+
+    .al-metric-item{
+        text-align: center;
+        font-family: "Guardian Egyptian Headline";
+        font-weight:200;
+        margin:0 0 10px;
+        line-height:16px;
+        .al-metric-value{
+            font-size: 30px;
+            color: #585858;
+            line-height: 16px;
+            
+        }
+        .al-metric-unit{
+            font-size:18px;
+        }
+    }
+
+    .al-metric-title{
+            font-family: "Guardian Agate Sans", Arial;
+            font-size:14px;
+            text-align:center;
+            color: #959592;
+        }
 
     .al-metric-title,
     .al-metric-value {

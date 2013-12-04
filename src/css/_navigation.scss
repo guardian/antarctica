@@ -1,15 +1,36 @@
 @import '_colours';
+
+
+
 .al-nav {
     position: relative;
+    padding:8px 0 7px;
+}
+
+.al-nav-day-count{
+    margin: 0;
+    font-family:"Guardian Egyptian Headline", Georgia;
+    font-weight:bold;
+    color:#333;
+    font-size:16px
+}
+
+.al-nav-date-value{
+    font-family: "Guardian Agate Sans", Arial;
+    margin:1px 0 0 0;
+    font-size:13px;
+    line-height:16px;
+    color: #959595;
 }
 
 .al-nav-button {
     position: absolute;
     top: 10px;
-    border-radius: 30px;
+    border-radius: 50%;
     background-color: $navButtonActiveBackgroundColour;
-    width: 20px;
-    height: 20px;
+    width: 30px;
+    height: 30px;
+    background: #C8C8B3;
 }
 
 .al-nav-button-prev {

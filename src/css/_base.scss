@@ -8,9 +8,9 @@ body {
 
 .al-wrapper {
     color: $mainTextColour;
-    width: 480px;
     background-color: $baseBackgroundColour;
     font-family: arial, sans-serif;
     border-top: 3px solid $headStripColour;
+    -webkit-font-smoothing: antialiased;
 }
 
