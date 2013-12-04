@@ -37,12 +37,41 @@ var Antarctica = (function() {
             template: '#mainTemplate'
         });
 
+        addMap();
+
         ractive.on({
             previousEntry: previousEntry,
             nextEntry: nextEntry
         });
 
         showUpdate();
+    }
+
+    function addMap() {
+        google.maps.visualRefresh = true;
+
+        var styledMap = new google.maps.StyledMapType(
+            AntarcticaMapStyles,
+            {name: "Styled Map"}
+        );
+
+        var mapOptions = {
+            center: new google.maps.LatLng(-63.46, -166.34),
+            disableDefaultUI: true,
+            zoom: 2
+        };
+
+        var map = new google.maps.Map($('.al-map').get()[0], mapOptions);
+        map.mapTypes.set('map_style', styledMap);
+        map.setMapTypeId('map_style');
+
+        var myLatlng = new google.maps.LatLng(-63.46, -166.34);
+        // To add the marker to the map, use the 'map' property
+        var marker = new google.maps.Marker({
+            position: myLatlng,
+            map: map,
+            title:"Hello World!"
+        });
     }
 
     function nextEntry() {

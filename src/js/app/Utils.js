@@ -1,2 +1,0 @@
-var Antarctica = Antarctica || {};
-

@@ -1,4 +1,4 @@
-[
+var AntarcticaMapStyles = [
     {
         "featureType": "water",
         "stylers": [
@@ -32,4 +32,4 @@
     ]
 },{
 }
-]
+];
