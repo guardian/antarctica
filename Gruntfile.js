@@ -36,19 +36,19 @@ module.exports = function(grunt) {
                 flatten: true,
                 expand: true,
                 includePaths: 'src/css/'
+            },
+
+            js: {
+                src: '**/*',
+                dest: 'dist/js/',
+                flatten: false,
+                expand: true,
+                cwd: 'src/js/'
             }
         },
 
         jshint: {
-            all: ['Gruntfile.js', 'src/js/**/*']
-        },
-
-        uglify: {
-            dist: {
-                files: {
-                    'dist/js/antarctica.min.js': ['src/js/**/*.js']
-                }
-            }
+            all: ['Gruntfile.js', 'src/js/*.js', 'src/js/app/**/*.js']
         },
 
         connect: {
@@ -75,7 +75,7 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-sass');
 
     // Tasks
-    grunt.registerTask('js', ['jshint', 'uglify']);
+    grunt.registerTask('js', ['jshint', 'copy:js']);
     grunt.registerTask('build', ['clean', 'js', 'copy', 'sass']);
     grunt.registerTask('default', ['build', 'connect', 'watch']);
 };
