@@ -37,7 +37,26 @@ var Antarctica = (function() {
             template: '#mainTemplate'
         });
 
+        ractive.on({
+            previousEntry: previousEntry,
+            nextEntry: nextEntry
+        });
+
         showUpdate();
+    }
+
+    function nextEntry() {
+        if (currentUpdateIndex + 1 < entries.length) {
+            currentUpdateIndex += 1 ;
+            showUpdate();
+        }
+    }
+
+    function previousEntry() {
+        if (currentUpdateIndex - 1 >= 0) {
+            currentUpdateIndex -= 1 ;
+            showUpdate();
+        }
     }
 
 
