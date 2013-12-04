@@ -1,0 +1,27 @@
+@import "_colours";
+
+.al-metrics {
+    width: 100%;
+    border-collapse: collapse;
+
+    tr {
+        border-top: 1px solid $dividerColour;
+        :first-child {
+            border-top-width: 2px;
+        }
+    }
+
+    td {
+        border: none;
+        padding: 10px 12px;
+    }
+
+    .al-metric-title,
+    .al-metric-value {
+        margin: 0
+    }
+
+    .al-metric-value {
+        font-size: $font_size_small;
+    }
+}

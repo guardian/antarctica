@@ -1,0 +1,25 @@
+@import '_colours';
+.al-nav {
+    position: relative;
+}
+
+.al-nav-button {
+    position: absolute;
+    top: 10px;
+    border-radius: 30px;
+    background-color: $navButtonActiveBackgroundColour;
+    width: 20px;
+    height: 20px;
+}
+
+.al-nav-button-prev {
+    left: 10px;
+}
+
+.al-nav-button-next {
+    right: 10px;
+}
+
+.al-nav-dates {
+    text-align: center;
+}

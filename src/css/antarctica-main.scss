@@ -1,35 +1,5 @@
-$font_size_small: 12px;
-
-body {
-    margin: 0;
-    padding: 0;
-}
-
-.al-wrapper {
-    background: rgb(50, 50, 50);
-    color: rgb(240, 240, 240);
-    width: 480px;
-}
-
-.al-map {
-    min-height: 250px;
-}
-
-.al-metrics {
-    width: 100%;
-    border-collapse: collapse;
-
-    td {
-        border: 1px solid rgb(90, 90, 90);
-        padding: 10px 12px;
-    }
-
-    .al-metric-title,
-    .al-metric-value {
-        margin: 0
-    }
-
-    .al-metric-value {
-        font-size: $font_size_small;
-    }
-}
+@import '_base';
+@import '_fonts';
+@import '_map';
+@import '_navigation';
+@import '_metrics';

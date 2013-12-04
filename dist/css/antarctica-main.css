@@ -3,18 +3,46 @@ body {
   padding: 0; }
 
 .al-wrapper {
-  background: #323232;
-  color: #f0f0f0;
-  width: 480px; }
+  color: #585858;
+  width: 480px;
+  background-color: #f4f4ed;
+  font-family: arial, sans-serif;
+  border-top: 3px solid #22c6e1; }
 
 .al-map {
   min-height: 250px; }
+  .al-map iframe {
+    width: 100%; }
+
+.al-nav {
+  position: relative; }
+
+.al-nav-button {
+  position: absolute;
+  top: 10px;
+  border-radius: 30px;
+  background-color: #cac8b2;
+  width: 20px;
+  height: 20px; }
+
+.al-nav-button-prev {
+  left: 10px; }
+
+.al-nav-button-next {
+  right: 10px; }
+
+.al-nav-dates {
+  text-align: center; }
 
 .al-metrics {
   width: 100%;
   border-collapse: collapse; }
+  .al-metrics tr {
+    border-top: 1px solid #dedede; }
+    .al-metrics tr :first-child {
+      border-top-width: 2px; }
   .al-metrics td {
-    border: 1px solid #5a5a5a;
+    border: none;
     padding: 10px 12px; }
   .al-metrics .al-metric-title, .al-metrics .al-metric-value {
     margin: 0; }

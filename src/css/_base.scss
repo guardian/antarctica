@@ -1,0 +1,16 @@
+@import '_colours';
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+
+.al-wrapper {
+    color: $mainTextColour;
+    width: 480px;
+    background-color: $baseBackgroundColour;
+    font-family: arial, sans-serif;
+    border-top: 3px solid $headStripColour;
+}
+

@@ -34,7 +34,8 @@ module.exports = function(grunt) {
                 src: 'src/index.html',
                 dest: 'dist/',
                 flatten: true,
-                expand: true
+                expand: true,
+                includePaths: 'src/css/'
             }
         },
 
@@ -53,7 +54,7 @@ module.exports = function(grunt) {
         connect: {
             server: {
                 options: {
-                    port: 9090,
+                    port: 9999,
                     base: 'dist',
                     hostname: '*'
                 }
