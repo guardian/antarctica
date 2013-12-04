@@ -185,7 +185,7 @@ body {
 
 .al-nav {
   position: relative;
-  padding: 8px 0 7px; }
+  padding: 10px 0 7px; }
 
 .al-nav-day-count {
   margin: 0;
@@ -204,11 +204,25 @@ body {
 .al-nav-button {
   position: absolute;
   top: 10px;
-  border-radius: 50%;
-  background-color: #cac8b2;
+  cursor: pointer;
   width: 30px;
   height: 30px;
-  background: #c8c8b3; }
+  top: 10px;
+  bottom: 10px; }
+
+.al-nav-button-prev {
+  background: url(../imgs/arrowLeftEnabled.png); }
+
+.al-nav-button-prev.disabled {
+  background: url(../imgs/arrowLeftDisabled.png);
+  cursor: default; }
+
+.al-nav-button-next {
+  background: url(../imgs/arrowRightEnabled.png); }
+
+.al-nav-button-next.disabled {
+  background: url(../imgs/arrowRightDisabled.png);
+  cursor: default; }
 
 .al-nav-button-prev {
   left: 10px; }

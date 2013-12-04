@@ -6,38 +6,47 @@
 </head>
 <body>
 
-<div class="al-wrapper">
+<div class="al-wrapper" id="templateOutput">
+    <p>Loading...</p>
+</div>
+
+<script type="text/ractive" id="mainTemplate">
     <div class="al-nav">
-        <div class="al-nav-button al-nav-button-prev"></div>
-        <div class="al-nav-dates">
-            <p class="al-nav-day-count">Day 14</p>
-            <p class="al-nav-date-value">Friday, 13 December 2013</p>
+
+        <div class="al-nav-button al-nav-button-prev" on-tap="previousEntry"></div>
+
+        <div class="al-nav-dates" id="al-nav-dates">
+            <p class="al-nav-day-count">Day (ENTRY ID!!!) {{ updatenumber }}</p>
+            <p class="al-nav-date-value">{{ date }}</p>
         </div>
-        <div class="al-nav-button al-nav-button-next disabled"></div>
+
+        <div class="al-nav-button al-nav-button-next disabled" on-tap="nextEntry"></div>
+
     </div>
     <div class="al-map">
-
+        lat: {{ lat }} long: {{ long }}
     </div>
     <table class="al-metrics">
         <tbody>
             <tr>
                 <td class="penguins">
                     <p class="al-metric-item">
-                        <span class="al-metric-value">45</span>
-                        <span class="al-metric-unit">mph</span>
+                        <span class="al-metric-value">{{ penguins }}</span>
                     </p>
                     <p class="al-metric-title">Penguins spotted</p>
                 </td>
                 <td class="air-temp">
                     <p class="al-metric-item">
-                        <span class="al-metric-value">45°</span>
+
+                        <span class="al-metric-value">{{ airtemp }}°</span>
                         <span class="al-metric-unit"></span>
+
                     </p>
                     <p class="al-metric-title">Air temperature</p>
                 </td>
                 <td class="seals">
                     <p class="al-metric-item">
-                        <span class="al-metric-value">45</span>
+                        <span class="al-metric-value">{{ seals }}</span>
                     </p>
                     <p class="al-metric-title">Seals spotted</p>
                 </td>
@@ -45,29 +54,35 @@
             <tr>
                 <td class="wind-speed">
                     <p class="al-metric-item">
-                        <span class="al-metric-value">45</span>
+                        <span class="al-metric-value">{{ windspeed }}</span>
                     </p>
                     <p class="al-metric-title">Wind speed</p>
                 </td>
                 <td class="icebergs">
                     <p class="al-metric-item">
-                        <span class="al-metric-value">45</span>
+                        <span class="al-metric-value"> {{ icebergs }}</span>
                     </p>
                     <p class="al-metric-title">Icebergs</p>
                 </td>
                 <td class="illness">
                     <p class="al-metric-item">
-                        <span class="al-metric-value">45</span>
+                        <span class="al-metric-value">{{ patients }}</span>
                     </p>
                     <p class="al-metric-title">Sick persons on board</p>
                 </td>
             </tr>
         </tbody>
     </table>
-</div>
+ </script>
+
+<script type="text/ractive" id="errorTemplate">
+    <p>Technical issues.</p>
+</script>
 
 <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
-<script src="js/antarctica.min.js"></script>
+<script src="js/libs/underscore-min.js"></script>
+<script src="js/libs/ractive.js"></script>
+<script src="js/antarctica.js"></script>
 
 </body>
 </html>
