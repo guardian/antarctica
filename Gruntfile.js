@@ -17,8 +17,8 @@ module.exports = function(grunt) {
                 tasks: ['sass']
             },
             html: {
-                files: ['src/index.html'],
-                tasks: ['copy']
+                files: ['src/*.html'],
+                tasks: ['copy:html']
             }
         },
 
@@ -31,8 +31,8 @@ module.exports = function(grunt) {
         },
 
         copy: {
-            main: {
-                src: 'src/index.html',
+            html: {
+                src: 'src/*.html',
                 dest: 'dist/',
                 flatten: true,
                 expand: true
