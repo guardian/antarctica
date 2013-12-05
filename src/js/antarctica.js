@@ -8,11 +8,18 @@ var Antarctica = (function() {
     var shipMarkers = [];
     var map;
 
+    // Useful utils
     function getParameterByName(name) {
         name = name.replace(/[\[]/, "\\[").replace(/[]]/, "\\]");
         var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
             results = regex.exec(location.search);
         return results === null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+    }
+
+    function getDateString(dateValue) {
+        var dateValues = dateValue.split('/');
+        var date = new Date(dateValues[2], dateValues[1] -1, dateValues[0]);
+        return date.toDateString();
     }
 
     function getData() {
@@ -25,8 +32,16 @@ var Antarctica = (function() {
         });
     }
 
+    function parseEntries(data) {
+        return data.map(function(entry) {
+            entry.title = ('undefined' === typeof entry.title) ? '-' : entry.title;
+            entry.date = getDateString(entry.date);
+            return entry;
+        });
+    }
+
     function handleDataResponse(response) {
-        entries = response.data;
+        entries = parseEntries(response.data);
         currentUpdateIndex = entries.length - 1;
 
         if (queryEntryID) {
@@ -35,28 +50,30 @@ var Antarctica = (function() {
                 currentUpdateIndex = entries.indexOf(queriedData);
             }
         }
+        renderTemplate();
+        addMap();
+        showUpdate();
+    }
 
+    function renderTemplate() {
         ractive = new Ractive({
             el: 'templateOutput',
             template: '#mainTemplate'
         });
 
-        addMap();
-
         ractive.on({
             previousEntry: previousEntry,
             nextEntry: nextEntry
         });
-
-        showUpdate();
     }
 
     function addMap() {
+        // Use new Google Maps look
         google.maps.visualRefresh = true;
 
         var styledMap = new google.maps.StyledMapType(
             AntarcticaMapStyles,
-            {name: "Styled Map"}
+            {name: 'Styled Map'}
         );
 
         var centerLatLng = new google.maps.LatLng(-63.46, 166.34);
@@ -70,21 +87,6 @@ var Antarctica = (function() {
         gMap = new google.maps.Map($('.al-map').get()[0], mapOptions);
         gMap.mapTypes.set('map_style', styledMap);
         gMap.setMapTypeId('map_style');
-
-//        shipMarker = new google.maps.Marker({
-//            position: centerLatLng,
-//            map: gMap,
-//            title: "",
-//            icon: {
-//                path: google.maps.SymbolPath.CIRCLE,
-//                fillOpacity: 1,
-//                fillColor: 'ffffff',
-//                strokeOpacity: 1.0,
-//                strokeColor: '585858',
-//                strokeWeight: 2.0,
-//                scale: 6 //pixels
-//            }
-//        });
 
         drawShipPath();
         setActiveShipMarker();
@@ -137,11 +139,6 @@ var Antarctica = (function() {
         });
     }
 
-    function getDate(date) {
-        var dateValues = date.split('/');
-        return new Date(dateValues[2], dateValues[1] -1, dateValues[0]);
-    }
-
 
     function drawShipPath() {
         var shipCoordinates = [];
@@ -152,7 +149,7 @@ var Antarctica = (function() {
             var shipMarker = new google.maps.Marker({
                 position: gPosition,
                 map: gMap,
-                title: getDate(entry.date).toGMTString(),
+                title: entry.date,
                 icon: smallShipIcon,
                 active: false
             });
@@ -233,5 +230,4 @@ var Antarctica = (function() {
 }());
 
 gsS3Callback = Antarctica.handleDataResponse;
-Antarctica.init();
-
+$(document).ready(Antarctica.init);

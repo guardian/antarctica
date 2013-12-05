@@ -28,8 +28,15 @@ var AntarcticaMapStyles = [
 },{
     "featureType": "landscape",
     "stylers": [
-        { "hue": "#ff6e00" }
+        { "hue": "#ff6e00" },
+        { "saturation": -100 },
+        { "gamma": 1.33 }
     ]
 },{
-}
+        "featureType": "administrative",
+        "stylers": [
+            { "visibility": "on" },
+            { "saturation": -100 }
+        ]
+    }
 ];
