@@ -128,11 +128,18 @@ var Antarctica = (function() {
             if (currentUpdateIndex === index) {
                 marker.setIcon(bigShipIcon);
                 marker.active = true;
+                marker.setZIndex(2);
             } else {
                 marker.setIcon(smallShipIcon);
                 marker.active = false;
+                marker.setZIndex(1);
             }
         });
+    }
+
+    function getDate(date) {
+        var dateValues = date.split('/');
+        return new Date(dateValues[2], dateValues[1] -1, dateValues[0]);
     }
 
 
@@ -145,7 +152,7 @@ var Antarctica = (function() {
             var shipMarker = new google.maps.Marker({
                 position: gPosition,
                 map: gMap,
-                title: entry.date,
+                title: getDate(entry.date).toGMTString(),
                 icon: smallShipIcon,
                 active: false
             });

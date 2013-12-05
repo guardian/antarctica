@@ -35,8 +35,7 @@ module.exports = function(grunt) {
                 src: 'src/index.html',
                 dest: 'dist/',
                 flatten: true,
-                expand: true,
-                includePaths: 'src/css/'
+                expand: true
             },
 
             js: {
@@ -47,12 +46,11 @@ module.exports = function(grunt) {
                 cwd: 'src/js/'
             },
 
-            js: {
-                src: 'src/img',
-                dest: 'dist/js/',
-                flatten: false,
-                expand: true,
-                cwd: 'src/js/'
+            imgs: {
+                src: 'src/imgs/*',
+                dest: 'dist/imgs/',
+                flatten: true,
+                expand: true
             }
         },
 

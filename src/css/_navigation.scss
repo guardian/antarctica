@@ -32,22 +32,24 @@
     height: 30px;
     top:10px;
     bottom:10px;
-    background-color: red;
+    background-color: $navButtonActiveBackgroundColour;
+    border-radius: 30px;
     outline: none;
 }
 
-.al-nav-button-prev{
+.al-nav-button-prev {
     background-image: url(../imgs/arrowLeftEnabled.png);
 }
-.al-nav-button-prev.disabled{
+.al-nav-button-prev.disabled {
     background-image: url(../imgs/arrowLeftDisabled.png);
     cursor:default;
 }
-.al-nav-button-next{
+.al-nav-button-next {
     background-image: url(../imgs/arrowRightEnabled.png);
 }
 .al-nav-button-next.disabled {
     background-image: url(../imgs/arrowRightDisabled.png);
+    background-color: $navButtonDisabledBackgroundColour;
     cursor: default;
 }
 

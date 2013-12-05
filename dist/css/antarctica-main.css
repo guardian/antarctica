@@ -211,7 +211,8 @@ body {
   height: 30px;
   top: 10px;
   bottom: 10px;
-  background-color: red;
+  background-color: #cac8b2;
+  border-radius: 30px;
   outline: none; }
 
 .al-nav-button-prev {
@@ -226,6 +227,7 @@ body {
 
 .al-nav-button-next.disabled {
   background-image: url(../imgs/arrowRightDisabled.png);
+  background-color: #edebe2;
   cursor: default; }
 
 .al-nav-button-prev {
