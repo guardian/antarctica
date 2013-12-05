@@ -186,6 +186,8 @@ body {
 .al-nav {
   position: relative;
   padding: 10px 0 7px; }
+  .al-nav ::selection {
+    background: transparent; }
 
 .al-nav-day-count {
   margin: 0;
@@ -208,20 +210,22 @@ body {
   width: 30px;
   height: 30px;
   top: 10px;
-  bottom: 10px; }
+  bottom: 10px;
+  background-color: red;
+  outline: none; }
 
 .al-nav-button-prev {
-  background: url(../imgs/arrowLeftEnabled.png); }
+  background-image: url(../imgs/arrowLeftEnabled.png); }
 
 .al-nav-button-prev.disabled {
-  background: url(../imgs/arrowLeftDisabled.png);
+  background-image: url(../imgs/arrowLeftDisabled.png);
   cursor: default; }
 
 .al-nav-button-next {
-  background: url(../imgs/arrowRightEnabled.png); }
+  background-image: url(../imgs/arrowRightEnabled.png); }
 
 .al-nav-button-next.disabled {
-  background: url(../imgs/arrowRightDisabled.png);
+  background-image: url(../imgs/arrowRightDisabled.png);
   cursor: default; }
 
 .al-nav-button-prev {

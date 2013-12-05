@@ -5,7 +5,8 @@ module.exports = function(grunt) {
 
         watch: {
             options: {
-                spawn: false
+                spawn: false,
+                livereload: true
             },
             js: {
                 files: ['src/js/**/*'],
@@ -44,6 +45,14 @@ module.exports = function(grunt) {
                 flatten: false,
                 expand: true,
                 cwd: 'src/js/'
+            },
+
+            js: {
+                src: 'src/img',
+                dest: 'dist/js/',
+                flatten: false,
+                expand: true,
+                cwd: 'src/js/'
             }
         },
 
@@ -56,7 +65,8 @@ module.exports = function(grunt) {
                 options: {
                     port: 9999,
                     base: 'dist',
-                    hostname: '*'
+                    hostname: '*',
+                    open: true
                 }
             }
         },
