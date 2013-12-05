@@ -192,6 +192,11 @@ var Antarctica = (function() {
         }
     }
 
+    function updateNavigation() {
+        $('.al-nav-button-prev').toggleClass('disabled', currentUpdateIndex === 0);
+        $('.al-nav-button-next').toggleClass('disabled', currentUpdateIndex === entries.length -1);
+    }
+
     function previousEntry() {
         if (currentUpdateIndex - 1 >= 0) {
             currentUpdateIndex -= 1 ;
@@ -215,6 +220,7 @@ var Antarctica = (function() {
         ractive.set(entries[currentUpdateIndex]);
         updateShipPosition();
         setActiveShipMarker();
+        updateNavigation();
     }
 
     function init() {

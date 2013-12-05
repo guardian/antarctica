@@ -3,9 +3,6 @@
 .al-nav {
     position: relative;
     padding:10px 0 7px;
-    ::selection {
-        background: transparent;
-    }
 }
 
 .al-nav-day-count{
@@ -37,6 +34,10 @@
     outline: none;
 }
 
+.al-nav-button.disabled {
+    background-color: $navButtonDisabledBackgroundColour;
+}
+
 .al-nav-button-prev {
     background-image: url(../imgs/arrowLeftEnabled.png);
 }
@@ -49,7 +50,6 @@
 }
 .al-nav-button-next.disabled {
     background-image: url(../imgs/arrowRightDisabled.png);
-    background-color: $navButtonDisabledBackgroundColour;
     cursor: default;
 }
 

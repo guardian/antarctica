@@ -12,5 +12,8 @@ body {
     font-family: arial, sans-serif;
     border-top: 3px solid $headStripColour;
     -webkit-font-smoothing: antialiased;
+    ::selection {
+        background: transparent;
+    }
 }
 
