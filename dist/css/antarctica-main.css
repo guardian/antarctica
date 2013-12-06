@@ -211,12 +211,7 @@ body {
   height: 30px;
   top: 10px;
   bottom: 10px;
-  background-color: #cac8b2;
-  border-radius: 30px;
   outline: none; }
-
-.al-nav-button.disabled {
-  background-color: #edebe2; }
 
 .al-nav-button-prev {
   background-image: url(../imgs/arrowLeftEnabled.png); }

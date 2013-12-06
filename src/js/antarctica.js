@@ -22,6 +22,30 @@ var Antarctica = (function() {
         return date.toDateString();
     }
 
+    // https://github.com/rhysbrettbowen/debounce/blob/master/debounce.js
+    function debounce(func, wait) {
+        var timeout, args, context, timestamp;
+        return function() {
+            context = this;
+            args = [].slice.call(arguments, 0);
+            timestamp = new Date();
+
+            var later = function() {
+                var last = (new Date()) - timestamp;
+                if (last < wait) {
+                    timeout = setTimeout(later, wait - last);
+                } else {
+                    timeout = null;
+                    func.apply(context, args);
+                }
+            };
+
+            if (!timeout) {
+                timeout = setTimeout(later, wait);
+            }
+        };
+    }
+
     function getData() {
         $.ajax({
             type:'get',
@@ -45,9 +69,12 @@ var Antarctica = (function() {
         currentUpdateIndex = entries.length - 1;
 
         if (queryEntryID) {
-            var queriedData = _.findWhere(entries, { updatenumber: queryEntryID});
-            if (queriedData) {
-                currentUpdateIndex = entries.indexOf(queriedData);
+            var queriedData = entries.filter(function(entry) {
+                return entry.updatenumber === queryEntryID;
+            });
+
+            if (queriedData.length > 0) {
+                currentUpdateIndex = entries.indexOf(queriedData[0]);
             }
         }
         renderTemplate();
@@ -91,7 +118,7 @@ var Antarctica = (function() {
         drawShipPath();
         setActiveShipMarker();
 
-        google.maps.event.addDomListener(window, 'resize', _.debounce(function() {
+        google.maps.event.addDomListener(window, 'resize', debounce(function() {
             gMap.setCenter(centerLatLng);
         }, 200));
     }
@@ -138,7 +165,6 @@ var Antarctica = (function() {
             }
         });
     }
-
 
     function drawShipPath() {
         var shipCoordinates = [];
