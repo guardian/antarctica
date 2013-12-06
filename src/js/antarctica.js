@@ -1,6 +1,5 @@
 var Antarctica = (function() {
     var prodDataURL = 'http://interactive.guim.co.uk/spreadsheetdata/0AkRR3zKqdlUHdDI1NzZ2RVJSdGNOek9WWTdiUUxyTEE.jsonp';
-    var testDataURL = 'http://interactive.guim.co.uk/spreadsheetdata/0AjNAJ9Njg5YTdEx0SFh4cFh1MmtveUR5YlZxbEpjZ2c.jsonp';
     var currentUpdateIndex;
     var ractive;
     var entries;
@@ -50,7 +49,7 @@ var Antarctica = (function() {
         $.ajax({
             type:'get',
             dataType:'jsonp',
-            url: testDataURL,
+            url: prodDataURL,
             jsonpCallback: 'gsS3Callback',
             cache: true
         });
@@ -213,17 +212,17 @@ var Antarctica = (function() {
 
     function nextEntry() {
         if (currentUpdateIndex + 1 < entries.length) {
-            goToEntry(1);
+            navToEntry(1);
         }
     }
 
     function previousEntry() {
         if (currentUpdateIndex - 1 >= 0) {
-            goToEntry(-1);
+            navToEntry(-1);
         }
     }
 
-    function goToEntry(direction) {
+    function navToEntry(direction) {
         currentUpdateIndex += direction;
         showUpdate();
         updateMapPosition();
