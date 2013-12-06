@@ -20,5 +20,7 @@ There is a customise widget page that will generate the updated embed code: http
 
 ## Where's the data coming from?
 A Google spreadsheet: https://docs.google.com/a/guardian.co.uk/spreadsheet/ccc?key=0AkRR3zKqdlUHdDI1NzZ2RVJSdGNOek9WWTdiUUxyTEE
+
 The spreadsheet is converted into JSONP and uploaded to S3 every minute.
+
 The JSONP feed is located at http://interactive.guim.co.uk/spreadsheetdata/0AkRR3zKqdlUHdDI1NzZ2RVJSdGNOek9WWTdiUUxyTEE.jsonp
