@@ -215,6 +215,15 @@ var Antarctica = (function() {
         if (currentUpdateIndex + 1 < entries.length) {
             currentUpdateIndex += 1 ;
             showUpdate();
+            updateMapPosition();
+        }
+    }
+
+    function previousEntry() {
+        if (currentUpdateIndex - 1 >= 0) {
+            currentUpdateIndex -= 1 ;
+            showUpdate();
+            updateMapPosition();
         }
     }
 
@@ -223,17 +232,10 @@ var Antarctica = (function() {
         $('.al-nav-button-next').toggleClass('disabled', currentUpdateIndex === entries.length -1);
     }
 
-    function previousEntry() {
-        if (currentUpdateIndex - 1 >= 0) {
-            currentUpdateIndex -= 1 ;
-            showUpdate();
-        }
-    }
-
-    function updateShipPosition() {
+    function updateMapPosition() {
         var data = entries[currentUpdateIndex];
         var shipLatlng = new google.maps.LatLng(data.lat, data.long);
-        //shipMarker.setPosition(shipLatlng);
+        gMap.setCenter(shipLatlng);
     }
 
     function goToEntry(entryID) {
@@ -244,7 +246,6 @@ var Antarctica = (function() {
 
     function showUpdate() {
         ractive.set(entries[currentUpdateIndex]);
-        updateShipPosition();
         setActiveShipMarker();
         updateNavigation();
     }
