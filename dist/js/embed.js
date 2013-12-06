@@ -49,7 +49,6 @@ function selectEntry(index) {
 function updatePreview() {
     var iframeSrc = embedURL;
     if (selectedEntry !== null && typeof selectedEntry === 'number') {
-        console.log(selectedEntry);
         iframeSrc += '?update_id=' + entries[selectedEntry].updatenumber;
     }
     $('iframe').attr('src', iframeSrc);
@@ -58,7 +57,6 @@ function updatePreview() {
 function updateEmbedCode() {
     var iframeSrc = embedURL;
     if (selectedEntry !== null && typeof selectedEntry === 'number') {
-        console.log(selectedEntry);
         iframeSrc += '?update_id=' + entries[selectedEntry].updatenumber;
     }
     var embedCode = iframeCode.replace('{{ src }}', iframeSrc);
