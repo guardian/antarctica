@@ -24,6 +24,9 @@ module.exports = function(grunt) {
 
         sass: {
             dist: {
+                options: {
+                    outputStyle: 'compact'
+                },
                 files: {
                     'dist/css/antarctica-main.css': 'src/css/antarctica-main.scss'
                 }
@@ -39,7 +42,7 @@ module.exports = function(grunt) {
             },
 
             js: {
-                src: '**/*',
+                src: 'libs/es5-shim.min.js',
                 dest: 'dist/js/',
                 flatten: false,
                 expand: true,
@@ -109,6 +112,19 @@ module.exports = function(grunt) {
             }
         },
 
+        cssmin: {
+            dist: {
+                files: {'dist/css/antarctica-main.css': ['dist/css/antarctica-main.css']}
+            }
+        },
+
+        useminPrepare: {
+            html: 'src/index.html'
+        },
+        usemin: {
+            html: 'dist/index.html'
+        },
+
         clean: ['dist']
 
     });
@@ -116,16 +132,19 @@ module.exports = function(grunt) {
     // Loads
     grunt.loadNpmTasks('grunt-contrib-jshint');
     grunt.loadNpmTasks('grunt-contrib-watch');
-    grunt.loadNpmTasks('grunt-contrib-connect');
-    grunt.loadNpmTasks('grunt-contrib-uglify');
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
+    grunt.loadNpmTasks('grunt-contrib-concat');
+    grunt.loadNpmTasks('grunt-contrib-connect');
+    grunt.loadNpmTasks('grunt-contrib-uglify');
+    grunt.loadNpmTasks('grunt-contrib-cssmin');
     grunt.loadNpmTasks('grunt-sass');
     grunt.loadNpmTasks('grunt-aws-s3');
+    grunt.loadNpmTasks('grunt-usemin');
 
     // Tasks
-    grunt.registerTask('js', ['jshint', 'copy:js']);
-    grunt.registerTask('build', ['clean', 'js', 'copy', 'sass']);
+    grunt.registerTask('js', ['jshint', 'useminPrepare', 'concat', 'uglify']);
+    grunt.registerTask('build', ['clean', 'jshint', 'sass', 'cssmin', 'copy', 'js', 'usemin']);
     grunt.registerTask('default', ['build', 'connect', 'watch']);
     grunt.registerTask('dry-run', ['build', 'aws_s3:debug']);
     grunt.registerTask('deploy', ['build', 'aws_s3:prod']);
