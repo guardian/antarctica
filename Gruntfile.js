@@ -146,7 +146,7 @@ module.exports = function(grunt) {
     grunt.registerTask('js', ['jshint', 'useminPrepare', 'concat', 'uglify']);
     grunt.registerTask('build', ['clean', 'jshint', 'sass', 'cssmin', 'copy', 'js', 'usemin']);
     grunt.registerTask('default', ['build', 'connect', 'watch']);
-    grunt.registerTask('dry-run', ['build', 'aws_s3:debug']);
+    grunt.registerTask('dryrun', ['build', 'aws_s3:debug']);
     grunt.registerTask('deploy', ['build', 'aws_s3:prod']);
 
 };
