@@ -2,6 +2,21 @@
 
 Embeddable trip status widget
 
+## Requirements
+* NodeJS
+* S3 credentials in your ENV
+
+## Setup
+* git clone
+* npm install
+* grunt
+
+## Deploy
+Try run by using `grunt dry-run`
+
+Real deploy to production using `grunt deploy`
+
+
 ## What is it?
 Tracks the journey of Guardian journalists on their voyage to Antarctica via an embeddable widget.
 Uses an `<iframe>` to embed the widget in a live-blog or article.

@@ -69,6 +69,46 @@ module.exports = function(grunt) {
             }
         },
 
+        aws_s3: {
+            options: {
+                bucket: 'gdn-cdn',
+                region: 'us-east-1',
+                access: 'public-read',
+                uploadConcurrency: 5
+            },
+            debug: {
+                options: {
+                    debug: true
+                },
+                files: [
+                    {
+                        action: 'upload',
+                        expand: true,
+                        cwd: 'dist/',
+                        src: ['**'],
+                        dest: 'embed/antarctica-2013/',
+                        params: {
+                            'CacheControl': 'max-age=60, public'
+                        }
+                    }
+                ]
+            },
+            prod: {
+                files: [
+                    {
+                        action: 'upload',
+                        expand: true,
+                        cwd: 'dist/',
+                        src: ['**'],
+                        dest: 'embed/antarctica-2013/',
+                        params: {
+                            'CacheControl': 'max-age=60, public'
+                        }
+                    }
+                ]
+            }
+        },
+
         clean: ['dist']
 
     });
@@ -81,9 +121,13 @@ module.exports = function(grunt) {
     grunt.loadNpmTasks('grunt-contrib-clean');
     grunt.loadNpmTasks('grunt-contrib-copy');
     grunt.loadNpmTasks('grunt-sass');
+    grunt.loadNpmTasks('grunt-aws-s3');
 
     // Tasks
     grunt.registerTask('js', ['jshint', 'copy:js']);
     grunt.registerTask('build', ['clean', 'js', 'copy', 'sass']);
     grunt.registerTask('default', ['build', 'connect', 'watch']);
+    grunt.registerTask('dry-run', ['build', 'aws_s3:debug']);
+    grunt.registerTask('deploy', ['build', 'aws_s3:prod']);
+
 };
