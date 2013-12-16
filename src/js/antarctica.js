@@ -64,7 +64,7 @@ var Antarctica = (function() {
     }
 
     function handleDataResponse(response) {
-        entries = parseEntries(response.data);
+        entries = parseEntries(response.sheets.data);
         currentUpdateIndex = entries.length - 1;
 
         if (queryEntryID) {
